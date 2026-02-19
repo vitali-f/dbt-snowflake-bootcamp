@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: airbnb
+    database: PC_DBT_DB
+    schema: DBT_VF
+    tables:
+      - name: listings
+        identifier: raw_listings  # Указываем реальное имя из Snowflake
+      - name: reviews
+        identifier: raw_reviews   # Указываем реальное имя из Snowflake
+      - name: hosts
+        identifier: raw_hosts     # Указываем реальное имя из Snowflake
