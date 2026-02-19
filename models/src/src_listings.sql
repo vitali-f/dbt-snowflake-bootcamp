@@ -2,7 +2,7 @@ WITH raw_listings AS (
     SELECT
         *
     FROM
-        PC_DBT_DB.DBT_VF.RAW_LISTINGS
+        {{ source('airbnb', 'listings') }}  -- Вот здесь магия dbt
 )
 SELECT
     id AS listing_id,
