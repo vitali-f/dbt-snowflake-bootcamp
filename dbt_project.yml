@@ -35,10 +35,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+# Это должно быть в самом низу файла dbt_project.yml
 models:
   airbnb:
-    # Applies to all files under models/example/
+    +materialized: view
     src:
-      +enabled: true
+      +materialized: table
+    dim:
       +materialized: table
 
